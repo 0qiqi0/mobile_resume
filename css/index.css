@@ -1,0 +1,77 @@
+html{
+    font-size: 100px; /*640的设计稿中:1rem=100px*/
+}
+html,body{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.loading,.phone,.message,.cube,.swiper{
+    display: none;
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+/*LOADING*/
+.loading{
+    background: #000;
+    display: block;
+
+
+}
+
+.loading .title{
+    position: absolute;
+    height:1.4rem;
+    width:100%;
+    top:50%;
+    left:0;
+    margin-top:-2.2rem;
+    color:#FFF;
+    letter-spacing: .04rem;
+    text-align: center;
+}
+
+.loading .title h1{
+    height:.75rem;
+    line-height:.75rem;
+    font-size: .5rem;
+    margin-bottom: .2rem;
+}
+
+.loading > .title >h2{
+    height:.45rem;
+    line-height:.45rem;
+    font-size: .26rem;
+}
+
+.loading>.progress{
+    width:4.6rem;
+    height:.3rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin: .85rem 0 0 -2.3rem;
+    background: #FFF;
+    border-radius: 0.06rem;
+}
+
+.loading .progress em{
+    display: block;
+    width:30%;
+    height:100%;
+    background: green;
+    border-radius: 0.06rem;
+    background: -webkit-linear-gradient(45deg,#5CB85C 25%,#74C274 25%,#74C274 50%,#5CB85C 50%,#5CB85C 75%,#74C274 75%,#74C274 100%);
+    background: linear-gradient(45deg,#5CB85C 25%,#74C274 25%,#74C274 50%,#5CB85C 50%,#5CB85C 75%,#74C274 75%,#74C274 100%);
+    background-size: .3rem .3rem;
+    -webkit-animation: loadingMove 1s linear infinite both;
+    animation: loadingMove 1s linear infinite both;
+
+    -webkit-transition: all 1s linear 0s;
+    transition: all 1s linear 0s;
+
+}

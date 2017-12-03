@@ -1,0 +1,20 @@
+
+@-webkit-keyframes loadingMove {
+    0%{
+        background-position: 0 .3rem;
+    }
+
+    100%{
+        background-position: 0 0;
+    }
+}
+
+@keyframes loadingMove {
+    0%{
+        background-position: 0 .3rem;
+    }
+
+    100%{
+        background-position: 0 0;
+    }
+}
