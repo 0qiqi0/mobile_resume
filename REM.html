@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rem学习</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        html,body{
+            width:100%;
+            overflow:hidden;
+            height:100%
+        }
+        html {
+            font-size: 100px;
+        }
+        .box{
+            position:absolute;
+            width:1rem;
+            height:1rem;
+            background: green;
+            top:50%;
+            left:50%;
+            margin: -.5rem 0 0 -.5rem;
+        }
+
+        /*REM是根据html根元素大小设定的值,是一个相对单位*/
+
+
+    </style>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize =document.documentElement.clientWidth/750*100 +'px';
+    </script>
+</head>
+<body>
+
+    <div class="box">
+        
+    </div>
+</body>
+</html>
