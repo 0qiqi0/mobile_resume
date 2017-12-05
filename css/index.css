@@ -4,7 +4,7 @@ html{
 html,body{
     width:100%;
     height:100%;
-    overflow: hidden;
+    overflow: hidden; /*让其宽高都是一屏,不出现滚动*/
 }
 
 .loading,.phone,.message,.cube,.swiper{
@@ -15,12 +15,9 @@ html,body{
     overflow: hidden;
 }
 
-/*LOADING*/
+/*-- LOADING 两个文字是一个整体,进度条是一个整体,从中间向下上偏移--*/
 .loading{
     background: #000;
-    display: block;
-
-
 }
 
 .loading .title{
@@ -65,8 +62,10 @@ html,body{
     height:100%;
     background: green;
     border-radius: 0.06rem;
+
     background: -webkit-linear-gradient(45deg,#5CB85C 25%,#74C274 25%,#74C274 50%,#5CB85C 50%,#5CB85C 75%,#74C274 75%,#74C274 100%);
     background: linear-gradient(45deg,#5CB85C 25%,#74C274 25%,#74C274 50%,#5CB85C 50%,#5CB85C 75%,#74C274 75%,#74C274 100%);
+
     background-size: .3rem .3rem;
     -webkit-animation: loadingMove 1s linear infinite both;
     animation: loadingMove 1s linear infinite both;
