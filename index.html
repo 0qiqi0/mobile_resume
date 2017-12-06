@@ -39,7 +39,7 @@
 
 <!--iphone -->
 <section class="phone" id="phone">
-    <h2>请听我的简短自我介绍</h2>
+    <h2>我的自我介绍</h2>
     <span class="time">00:00</span>
 
     <div class="listen">
@@ -50,6 +50,8 @@
     <div class="details">
         <div class="touch"></div>
     </div>
+    <audio src="audio/bell.mp3" preload="none" loop controls id="listernMusic"></audio>
+    <audio src="audio/say.mp3" preload="none" id="detailsMusic"></audio>
 </section>
 
 
@@ -59,13 +61,13 @@
         <li class="teacher">
             你有哪些擅长的前端技能呢?
             <em></em>
-            <image src="image/student_logo.png"></image>
+            <image src="img/student_logo.png"></image>
         </li>
         <li class="student">
             前端三大宝剑,模块化工程化思想,
             react技术栈,移动端web开发经验等
             <em></em>
-            <image src="image/teacher_logo.png"></image>
+            <image src="img/teacher_logo.png"></image>
         </li>
     </ul>
 
@@ -135,6 +137,8 @@
 
 </script>
 <script charset="UTF-8" type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="http://lib.baomitu.com/zepto/1.2.0/zepto.js"></script>
+
 <script charset="UTF-8" type="text/javascript" src="js/index.js"></script>
 
 </html>

@@ -7,6 +7,11 @@ html,body{
     overflow: hidden; /*让其宽高都是一屏,不出现滚动*/
 }
 
+body{
+    position: relative;
+    z-index: -3;
+}
+
 .loading,.phone,.message,.cube,.swiper{
     display: none;
     position:relative;
@@ -74,3 +79,183 @@ html,body{
     transition: all 1s linear 0s;
 
 }
+
+/*--PHONE--*/
+
+.phone{
+    background: url('../img/zf_phoneBg2.jpg') ;
+    background-size: cover;
+    z-index: -2;
+
+    -webkit-transition: all .5s;
+    transition: all .5s;
+
+}
+
+.phone audio{
+    display: none;
+}
+
+.phone h2{
+
+    position: absolute;
+    top:.5rem;
+    left:50%;
+    margin-left: -1.31rem;
+    width:2.62rem;
+    height:1.25rem;
+    color:white;
+    font-size: .4rem;
+}
+
+.phone .time{
+    display: none;
+    position: absolute;
+    top:1.85rem;
+    left:0;
+    width:100%;
+    height:.3rem;
+    line-height: .3rem;
+    text-align: center;
+    color:white;
+    font-size: .3rem;
+    letter-spacing: .05rem;
+}
+
+.phone .listen{
+    position: absolute;
+    width:5.2rem;
+    height:3.6rem;
+    bottom: .3rem;
+    left:50%;
+    margin-left:-2.6rem;
+    background: url('../img/zf_phoneListen.png') no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.phone .listen div{
+
+    box-sizing: border-box;
+    position: absolute;
+    right:-.06rem;
+    bottom:.48rem;
+    width:1.6rem;
+    height:1.6rem;
+    z-index:5;
+}
+
+.phone .listen div .move{
+    z-index: -1;
+    border: .03rem solid #0F0;
+    border-radius: 50%;
+    -webkit-animation: phoneMove 1s linear infinite both;
+    animation: phoneMove 1s linear infinite both;
+
+}
+
+.phone .details{
+    //display: none;
+
+    position: absolute;
+    bottom: .3rem;
+    margin-left: -2.6rem;
+    width:5.2rem;
+    left: 50%;
+    height:6.59rem;
+    background: url('../img/zf_phoneDetail.png') no-repeat;
+    background-size: 100% 100%;
+
+    -webkit-transform: translateY(6.89rem);
+    transform: translateY(6.89rem);
+
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+.phone .details .touch{
+    position:absolute;
+    bottom:.28rem;
+    left:50%;
+    z-index: 5;
+    margin-left: -.8rem;
+    width: 1.6rem;
+    height:1.6rem;
+}
+
+/*--MESSAGE--*/
+.message{
+    background: #EAEAEA;
+    //width:100%;
+
+}
+
+.message .messageList{
+    margin-top: .2rem;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.message .messageList li{
+    max-width:3.6rem;
+    padding: .25rem;
+    margin-bottom: .4rem;
+    line-height: .4rem;
+    font-size:.26rem;
+    border-radius: .1rem;
+    position: relative;
+
+}
+
+.message .messageList li.student{
+    float:left;
+    background: #FFF;
+    border: .02rem solid #CACACA;
+    margin-left: 1.25rem;
+
+}
+
+.message .messageList li.teacher{
+    float:right;
+    background: #A2E45C;
+    border: .02rem solid #96B474;
+    margin-right: 1.25rem;
+
+}
+.message .messageList li em{
+    position: absolute;
+    top:.2rem;
+
+    width:.1rem;
+    height:.2rem;
+
+
+}
+
+.message .messageList li.student em{
+    left: -.1rem;
+    background: url('../img/zf_messageArrow1.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.message .messageList li.teacher em{
+    right: -.1rem;
+    background: url('../img/zf_messageArrow2.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.message .messageList li img{
+    width:.82rem;
+    position: absolute;
+    top:0;
+    height: .82rem;
+    border-radius: 50%;
+}
+
+.message .messageList li.student img{
+    left:1rem;
+}
+
+.message .messageList li.teacher img{
+    right:-1rem;
+}
+
