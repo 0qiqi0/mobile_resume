@@ -203,6 +203,13 @@ body{
     font-size:.26rem;
     border-radius: .1rem;
     position: relative;
+    list-style-type:none;
+    /*--开始让每条消息下移,透明,然后用电话控制,自己:能不能用top--*/
+    -webkit-transform: translateY(1rem);
+    transform: translateY(1rem);
+    opacity: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
 
 }
 
@@ -231,17 +238,19 @@ body{
 
 }
 
-.message .messageList li.student em{
+/*--箭头暂时去掉了--*/
+#message .messageList li.student em{
     left: -.1rem;
     background: url('../img/zf_messageArrow1.png') no-repeat;
     background-size: 100% 100%;
 }
 
-.message .messageList li.teacher em{
+#message .messageList li.teacher em{
     right: -.1rem;
     background: url('../img/zf_messageArrow2.png') no-repeat;
     background-size: 100% 100%;
 }
+
 
 .message .messageList li img{
     width:.82rem;
@@ -252,10 +261,71 @@ body{
 }
 
 .message .messageList li.student img{
-    left:1rem;
+    left:-1rem;
 }
 
 .message .messageList li.teacher img{
     right:-1rem;
 }
+
+
+.message .keyboard{
+    position: absolute;
+    width: 100%;
+    height: 5.16rem;
+    background: url(../img/message_keyboard.jpg) no-repeat;
+    background-size: 100% 100%;
+    left:0;
+    bottom:-.54rem;
+
+    -webkit-transform: translateY(3.7rem);
+    transform: translateY(3.7rem);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+}
+
+.message .keyboard .textTip{
+    position: absolute;
+    width: 4rem;
+    height: .4rem;
+    top:.35rem;
+    left:.9rem;
+    font-size: .25rem;
+    line-height: .4rem;
+    display: none;
+}
+.message .keyboard .submit{
+    display: none;
+    position: absolute;
+    right:.1rem;
+    bottom:.6rem;
+    z-index:5;
+    width: 1.47rem;
+    height: .74rem;
+    background: url('../img/message_submit.png') no-repeat;
+    background-size: 100% 100%;
+    border-radius: .1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -127,10 +127,89 @@ var phoneRender=(function(){
 
 /*--MESSAGE--*/
 var messageRender = (function(){
-    var $message = $('#message');
+    var $message = $('#message'),
+        $messageList=$message.children('.messageList'),
+        $list = $messageList.children('li'),
+        $keyBoard = $message.children('.keyboard'),
+        $textTip = $keyBoard.children('.textTip'),
+        $submit = $keyBoard.children('.submit');
+
+    var autoTimer =null,
+        step = -1,
+        total = $list.length,
+        bounceTop =0;
+    var messageMusci = $('#messageMusic');
+
+    /*--s实现消息列表一条条发送--*/
+    function messageMove(){
+        autoTimer = window.setInterval(function(){
+            step++;
+            var $cur = $list.eq(step);
+            $cur.css({
+                opacity:1,
+                transform:'translateY(0)'
+
+            })
+            //当发送完成第三条的时候开启键盘操作.
+            if(step===1){
+                window.clearInterval(autoTimer);
+                $keyBoard.css('transform','translateY(0)');
+                $textTip.css('display','block');
+                textMove();
+            }
+            //从第三条开始没发送一条消息都需要让整个消息区域网上移动一些.
+            if(step >=3){
+                bounceTop -=$cur[0].offsetHeight+10;
+                $messageList.css('transform','translateY('+bounceTop+'px)');
+            }
+            //当消息发送完成
+            if(step===total-1){
+                window.clearInterval(autoTimer);
+                window.setTimeout(function(){
+                    if(page ===2) return;
+
+                    $message.css('display','none');
+                    messageMusci.pause();
+                    cubeRender.init();
+
+                },1500);
+            }
+        },1000);
+
+    }
+    //实现文字打印
+    function textMove(){
+        var text = '前端三大件,react技术栈,mobileweb',
+            n = -1,
+            result = '';
+        var textTime =window.setInterval(function(){
+            n++;
+            result +=text[n];
+            $textTip.html(result);
+            if(n === text.length-1){
+                window.clearInterval(textTime);
+                $submit.css('display','block').click(function(){
+                    $textTip.css('display','none');
+                    $keyBoard.css('transform','translateY(3.7rem)');
+                    messageMove();
+                });
+            }
+        },100);
+    }
     return{
         init:function(){
             $message.css('display','block');
+            messageMove();
+            messageMusci.play();
+        }
+    }
+})()
+
+/*魔方区域*/
+var cubeRender =(function(){
+    return {
+        init:function(){
+
         }
     }
 })()
@@ -148,6 +227,10 @@ if(page ===1){
 
 if(page ===2){
     messageRender.init();
+}
+
+if(page ===3){
+    cubeRender.init();
 }
 
 
