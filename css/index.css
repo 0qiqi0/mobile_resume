@@ -1,75 +1,76 @@
-html{
+html {
     font-size: 100px; /*640的设计稿中:1rem=100px*/
 }
-html,body{
-    width:100%;
-    height:100%;
+
+html, body {
+    width: 100%;
+    height: 100%;
     overflow: hidden; /*让其宽高都是一屏,不出现滚动*/
 }
 
-body{
+body {
     position: relative;
     z-index: -3;
 }
 
-.loading,.phone,.message,.cube,.swiper{
+.loading, .phone, .message, .cube, .swiper {
     display: none;
-    position:relative;
-    width:100%;
-    height:100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
 /*-- LOADING 两个文字是一个整体,进度条是一个整体,从中间向下上偏移--*/
-.loading{
+.loading {
     background: #000;
 }
 
-.loading .title{
+.loading .title {
     position: absolute;
-    height:1.4rem;
-    width:100%;
-    top:50%;
-    left:0;
-    margin-top:-2.2rem;
-    color:#FFF;
+    height: 1.4rem;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -2.2rem;
+    color: #FFF;
     letter-spacing: .04rem;
     text-align: center;
 }
 
-.loading .title h1{
-    height:.75rem;
-    line-height:.75rem;
+.loading .title h1 {
+    height: .75rem;
+    line-height: .75rem;
     font-size: .5rem;
     margin-bottom: .2rem;
 }
 
-.loading > .title >h2{
-    height:.45rem;
-    line-height:.45rem;
+.loading > .title > h2 {
+    height: .45rem;
+    line-height: .45rem;
     font-size: .26rem;
 }
 
-.loading>.progress{
-    width:4.6rem;
-    height:.3rem;
+.loading > .progress {
+    width: 4.6rem;
+    height: .3rem;
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     margin: .85rem 0 0 -2.3rem;
     background: #FFF;
     border-radius: 0.06rem;
 }
 
-.loading .progress em{
+.loading .progress em {
     display: block;
-    width:30%;
-    height:100%;
+    width: 30%;
+    height: 100%;
     background: green;
     border-radius: 0.06rem;
 
-    background: -webkit-linear-gradient(45deg,#5CB85C 25%,#74C274 25%,#74C274 50%,#5CB85C 50%,#5CB85C 75%,#74C274 75%,#74C274 100%);
-    background: linear-gradient(45deg,#5CB85C 25%,#74C274 25%,#74C274 50%,#5CB85C 50%,#5CB85C 75%,#74C274 75%,#74C274 100%);
+    background: -webkit-linear-gradient(45deg, #5CB85C 25%, #74C274 25%, #74C274 50%, #5CB85C 50%, #5CB85C 75%, #74C274 75%, #74C274 100%);
+    background: linear-gradient(45deg, #5CB85C 25%, #74C274 25%, #74C274 50%, #5CB85C 50%, #5CB85C 75%, #74C274 75%, #74C274 100%);
 
     background-size: .3rem .3rem;
     -webkit-animation: loadingMove 1s linear infinite both;
@@ -82,8 +83,8 @@ body{
 
 /*--PHONE--*/
 
-.phone{
-    background: url('../img/zf_phoneBg2.jpg') ;
+.phone {
+    background: url('../img/zf_phoneBg2.jpg');
     background-size: cover;
     z-index: -2;
 
@@ -92,60 +93,60 @@ body{
 
 }
 
-.phone audio{
+.phone audio {
     display: none;
 }
 
-.phone h2{
+.phone h2 {
 
     position: absolute;
-    top:.5rem;
-    left:50%;
+    top: .5rem;
+    left: 50%;
     margin-left: -1.31rem;
-    width:2.62rem;
-    height:1.25rem;
-    color:white;
+    width: 2.62rem;
+    height: 1.25rem;
+    color: white;
     font-size: .4rem;
 }
 
-.phone .time{
+.phone .time {
     display: none;
     position: absolute;
-    top:1.85rem;
-    left:0;
-    width:100%;
-    height:.3rem;
+    top: 1.85rem;
+    left: 0;
+    width: 100%;
+    height: .3rem;
     line-height: .3rem;
     text-align: center;
-    color:white;
+    color: white;
     font-size: .3rem;
     letter-spacing: .05rem;
 }
 
-.phone .listen{
+.phone .listen {
     position: absolute;
-    width:5.2rem;
-    height:3.6rem;
+    width: 5.2rem;
+    height: 3.6rem;
     bottom: .3rem;
-    left:50%;
-    margin-left:-2.6rem;
+    left: 50%;
+    margin-left: -2.6rem;
     background: url('../img/zf_phoneListen.png') no-repeat;
     background-size: 100% 100%;
 
 }
 
-.phone .listen div{
+.phone .listen div {
 
     box-sizing: border-box;
     position: absolute;
-    right:-.06rem;
-    bottom:.48rem;
-    width:1.6rem;
-    height:1.6rem;
-    z-index:5;
+    right: -.06rem;
+    bottom: .48rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    z-index: 5;
 }
 
-.phone .listen div .move{
+.phone .listen div .move {
     z-index: -1;
     border: .03rem solid #0F0;
     border-radius: 50%;
@@ -154,15 +155,15 @@ body{
 
 }
 
-.phone .details{
-    //display: none;
+.phone .details {
+/ / display: none;
 
     position: absolute;
     bottom: .3rem;
     margin-left: -2.6rem;
-    width:5.2rem;
+    width: 5.2rem;
     left: 50%;
-    height:6.59rem;
+    height: 6.59rem;
     background: url('../img/zf_phoneDetail.png') no-repeat;
     background-size: 100% 100%;
 
@@ -173,37 +174,38 @@ body{
     transition: all .5s linear;
 }
 
-.phone .details .touch{
-    position:absolute;
-    bottom:.28rem;
-    left:50%;
+.phone .details .touch {
+    position: absolute;
+    bottom: .28rem;
+    left: 50%;
     z-index: 5;
     margin-left: -.8rem;
     width: 1.6rem;
-    height:1.6rem;
+    height: 1.6rem;
 }
 
 /*--MESSAGE--*/
-.message{
+.message {
     background: #EAEAEA;
-    //width:100%;
+/ / width: 100 %;
 
 }
 
-.message .messageList{
+.message .messageList {
     margin-top: .2rem;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-.message .messageList li{
-    max-width:3.6rem;
+
+.message .messageList li {
+    max-width: 3.6rem;
     padding: .25rem;
     margin-bottom: .4rem;
     line-height: .4rem;
-    font-size:.26rem;
+    font-size: .26rem;
     border-radius: .1rem;
     position: relative;
-    list-style-type:none;
+    list-style-type: none;
     /*--开始让每条消息下移,透明,然后用电话控制,自己:能不能用top--*/
     -webkit-transform: translateY(1rem);
     transform: translateY(1rem);
@@ -213,70 +215,68 @@ body{
 
 }
 
-.message .messageList li.student{
-    float:left;
+.message .messageList li.student {
+    float: left;
     background: #FFF;
     border: .02rem solid #CACACA;
     margin-left: 1.25rem;
 
 }
 
-.message .messageList li.teacher{
-    float:right;
+.message .messageList li.teacher {
+    float: right;
     background: #A2E45C;
     border: .02rem solid #96B474;
     margin-right: 1.25rem;
 
 }
-.message .messageList li em{
+
+.message .messageList li em {
     position: absolute;
-    top:.2rem;
+    top: .2rem;
 
-    width:.1rem;
-    height:.2rem;
-
+    width: .1rem;
+    height: .2rem;
 
 }
 
 /*--箭头暂时去掉了--*/
-#message .messageList li.student em{
+#message .messageList li.student em {
     left: -.1rem;
     background: url('../img/zf_messageArrow1.png') no-repeat;
     background-size: 100% 100%;
 }
 
-#message .messageList li.teacher em{
+#message .messageList li.teacher em {
     right: -.1rem;
     background: url('../img/zf_messageArrow2.png') no-repeat;
     background-size: 100% 100%;
 }
 
-
-.message .messageList li img{
-    width:.82rem;
+.message .messageList li img {
+    width: .82rem;
     position: absolute;
-    top:0;
+    top: 0;
     height: .82rem;
     border-radius: 50%;
 }
 
-.message .messageList li.student img{
-    left:-1rem;
+.message .messageList li.student img {
+    left: -1rem;
 }
 
-.message .messageList li.teacher img{
-    right:-1rem;
+.message .messageList li.teacher img {
+    right: -1rem;
 }
 
-
-.message .keyboard{
+.message .keyboard {
     position: absolute;
     width: 100%;
     height: 5.16rem;
     background: url(../img/message_keyboard.jpg) no-repeat;
     background-size: 100% 100%;
-    left:0;
-    bottom:-.54rem;
+    left: 0;
+    bottom: -.54rem;
 
     -webkit-transform: translateY(3.7rem);
     transform: translateY(3.7rem);
@@ -285,27 +285,446 @@ body{
 
 }
 
-.message .keyboard .textTip{
+.message .keyboard .textTip {
     position: absolute;
     width: 4rem;
     height: .4rem;
-    top:.35rem;
-    left:.9rem;
+    top: .35rem;
+    left: .9rem;
     font-size: .25rem;
     line-height: .4rem;
     display: none;
 }
-.message .keyboard .submit{
+
+.message .keyboard .submit {
     display: none;
     position: absolute;
-    right:.1rem;
-    bottom:.6rem;
-    z-index:5;
+    right: .1rem;
+    bottom: .6rem;
+    z-index: 5;
     width: 1.47rem;
     height: .74rem;
     background: url('../img/message_submit.png') no-repeat;
     background-size: 100% 100%;
     border-radius: .1rem;
+}
+
+/*CUBE模块*/
+.cube {
+    perspective: 1000px;
+    background: url("../img/cube_bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+.tip {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    margin-left: -1.97rem;
+    width: 3.94rem;
+    height: .44rem;
+    color: yellow;
+    font-size: .4rem;
+    text-align: center;
+}
+
+.cube .cubebox {
+    width: 5.1rem;
+    height: 5.1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -2.55rem 0 0 -2.55rem;
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform: scale(0.6) rotateX(-35deg) rotateY(45deg);
+    transform: scale(0.6) rotateX(-35deg) rotateY(45deg);
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+}
+
+.cube .cubebox li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -2.55rem 0 0 -2.55rem;
+
+    list-style-type: none;
+
+}
+
+.cube .cubebox li:nth-child(1) {
+    //background: url("../img/cube1.png") no-repeat;
+    background: red;
+    background-size: 100% 100%;
+    -webkit-transform: translateZ(2.55rem);
+    transform: translateZ(2.55rem);
+
+}
+/*后面,先移动再旋转,或者先旋转再移动(此时,视角z轴变化)*/
+.cube .cubebox li:nth-child(2) {
+    //background: url("../img/cube2.png") no-repeat;
+    background: yellow;
+    background-size: 100% 100%;
+    -webkit-transform: rotateY(180deg) translateZ(2.55rem);
+    transform:  rotateY(180deg) translateZ(2.55rem);
+
+}
+
+.cube .cubebox li:nth-child(3) {
+    //background: url("../img/cube3.png") no-repeat;
+    background: blueviolet;
+    background-size: 100% 100%;
+    -webkit-transform: rotateY(90deg) translateZ(2.55rem) ;
+    transform: rotateY(90deg) translateZ(2.55rem) ;
+
+}
+/*左边*/
+.cube .cubebox li:nth-child(4) {
+    //background: url("../img/cube4.png") no-repeat;
+    background: hotpink;
+    background-size: 100% 100%;
+    -webkit-transform: rotateY(-90deg) translateZ(2.55rem) ;
+    transform: rotateY(-90deg) translateZ(2.55rem) ;
+
+}
+/*下面*/
+
+.cube .cubebox li:nth-child(5) {
+    //background: url("../img/cube5.png") no-repeat;
+    background: blanchedalmond;
+    background-size: 100% 100%;
+    -webkit-transform: rotateX(-90deg) translateZ(2.55rem) ;
+    transform: rotateX(-90deg) translateZ(2.55rem) ;
+
+}
+/*上面*/
+.cube .cubebox li:nth-child(6) {
+    //background: url("../img/cube6.png") no-repeat;
+    background: blue;
+    background-size: 100% 100%;
+    -webkit-transform: rotateX(90deg) translateZ(2.55rem) ;
+    transform: rotateX(90deg) translateZ(2.55rem) ;
+
+}
+
+
+/*--SWIPER--*/
+.swiper-container .swiper-slide{
+    width:100%;
+    height:100%;
+    position:relative;
+    font-family: Microsoft JhengHei;
+}
+
+.page1{
+    background: #FAC471;
+}
+
+/*工作经历2*/
+.page2{
+    background: darkseagreen  ;
+}
+
+.page2 h2 {
+    position: absolute;
+    left:0;
+    top:.8rem;
+    width:100%;
+    height:.9rem;
+    line-height: .9rem;
+    text-align: center;
+    font-size: .6rem;
+    font-weight: normal;
+    color:#665C50;
+    opacity: 0;
+}
+
+.page2 .box {
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:5.12rem;
+    height:5.8rem;
+    margin: -2.4rem 0 0 -2.56rem;
+}
+
+.page2 .box img{
+    position: absolute;
+    width:1rem;
+    height:1rem;
+    top:50%;
+    left:50%;
+    margin:-.5rem 0 0 -.5rem;
+    opacity: 0;
+    border-radius: 15%;
+}
+
+
+.page2 .box img:nth-child(1) {
+    width:1.32rem;
+    height:1.32rem;
+    margin :-.85rem  0 0 -.66rem;
+    opacity: 1;
+
+}
+
+
+/*实现原理:把需要运动的元素以及设定的动画都放在#pageN下.这样的话以后只要给这个容器增加对应的pagen的id就可实现动画.id优先级高于class和类名的*/
+#page2 h2{
+    -webkit-animation: bounceInLeft 1s both;
+    animation: bounceInLeft 1s both;
+}
+
+#page2 .box img:nth-child(1){
+    -webkit-animation: shake 1s both,pageShake .5s 1s infinite both;
+    animation: shake 1s both,pageShake .5s 1s infinite both;
+}
+
+#page2 .box img:nth-child(2){
+    -webkit-animation: page2Move1 .5s .5s both,page2Shake 1s 1s infinite both;
+    animation: page2Move1 .5s .5s both,page2Shake 1s 1s infinite both;
+}
+
+#page2 .box img:nth-child(3){
+    -webkit-animation: page2Move2 .5s .5s both,page2Shake 1s 1s infinite both;
+    animation: page2Move2 .5s .5s both,page2Shake 1s 1s infinite both;
+}
+
+
+#page2 .box img:nth-child(4){
+    -webkit-animation: page2Move3 .5s .5s both,page2Shake 1s 1s infinite both;
+    animation: page2Move3 .5s .5s both,page2Shake 1s 1s infinite both;
+}
+
+
+
+#page2 .box img:nth-child(5){
+    -webkit-animation: page2Move4 .5s .5s both,page2Shake 1s 1s infinite both;
+    animation: page2Move4 .5s .5s both,page2Shake 1s 1s infinite both;
+}
+
+
+#page2 .box img:nth-child(6){
+    -webkit-animation: page2Move5 .5s .5s both,page2Shake 1s 1s infinite both;
+    animation: page2Move5 .5s .5s both,page2Shake 1s 1s infinite both;
+}
+
+#page2 .box img:nth-child(7){
+    -webkit-animation: page2Move6 .5s .5s both,page2Shake 1s 1s infinite both;
+    animation: page2Move6 .5s .5s both,page2Shake 1s 1s infinite both;
+}
+
+
+
+/*技能情况*/
+.page3{
+    background: #E45454;
+}
+
+.page3 #page3title{
+    //position: absolute;
+    //width: 3.82rem;
+    //top:.5rem;
+    //left: 50%;
+    //margin-left: -1.91rem;
+    text-align: center;
+    font-size: .5rem;
+    margin-top: .5rem;
+    opacity: 0;
+
+}
+.page3 .box{
+    position: absolute;
+    top:1.5rem;
+    left: 50%;
+    margin-left: -2.85rem;
+    width:5.7rem
+}
+
+.page3 .box li{
+    float:left;
+    width:48%;
+    margin: .2rem 0;
+    height: 3rem;
+    color:#FFF;
+    font-size: .24rem;
+    list-style-type: none;
+
+
+}
+
+/*.page3 .box li:nth-child(3n+2){
+    margin: .2rem 2%;
+}*/
+
+.page3 .box li img {
+    display: block;
+    width:1.2rem;
+    height: 1.2rem;
+    border-radius: 15%;
+    margin: 0 auto;
+    opacity: 0;
+}
+.page3 .box li .detail{
+    opacity: 0;
+}
+.page3 .box li .detail p:nth-child(1) {
+    line-height: .5rem;
+    text-align: center;
+}
+
+.page3 .box li .detail p:nth-child(2) {
+    line-height: .32rem;
+    text-align: left;
+}
+
+#page3 #page3title{
+    -webkit-animation: bounceInLeft .8s both;
+    animation: bounceInLeft .8s both;
+
+}
+/*技能图片*/
+#page3 .box li:nth-child(1) img{
+    -webkit-animation: bounceIn 1s .1s both;
+    animation: bounceIn 1s .1s both;
+}
+#page3 .box li:nth-child(2) img{
+    -webkit-animation: bounceIn 1s .2s both;
+    animation: bounceIn 1s .1s both;
+}
+
+#page3 .box li:nth-child(3) img{
+    -webkit-animation: bounceIn 1s .3s both;
+    animation: bounceIn 1s .1s both;
+}
+
+#page3 .box li:nth-child(4) img{
+    -webkit-animation: bounceIn 1s .4s both;
+    animation: bounceIn 1s .1s both;
+}
+
+#page3 .box li:nth-child(5) img{
+    -webkit-animation: bounceIn 1s .5s both;
+    animation: bounceIn 1s .1s both;
+}
+
+#page3 .box li:nth-child(6) img{
+    -webkit-animation: bounceIn 1s .6s both;
+    animation: bounceIn 1s .1s both;
+}
+
+/*技能文字*/
+#page3 .box li:nth-child(1) .detail{
+    -webkit-animation: fadeIn 1s .1s both;
+    animation: fadeIn 1s .1s both;
+}
+#page3 .box li:nth-child(2) .detail{
+    -webkit-animation: fadeIn 1s .2s both;
+    animation: fadeIn 1s .2s both;
+}
+
+#page3 .box li:nth-child(3) .detail{
+    -webkit-animation: fadeIn 1s .3s both;
+    animation: fadeIn 1s .3s both;
+}
+
+#page3 .box li:nth-child(4) .detail{
+    -webkit-animation: fadeIn 1s .4s both;
+    animation: fadeIn 1s .4s both;
+}
+
+#page3 .box li:nth-child(5) .detail{
+    -webkit-animation: fadeIn 1s .5s both;
+    animation: fadeIn 1s .5s both;
+}
+
+#page3 .box li:nth-child(6) .detail{
+    -webkit-animation: fadeIn 1s .6s both;
+    animation: fadeIn 1s .6s both;
+}
+
+
+/*个人信息*/
+.page4{
+    background: #FBFFE8;
+}
+.page4 p{
+    position: absolute;
+    width:3.92rem;
+    top:.57rem;
+    left:.64rem;
+    font-size: .3rem;
+    line-height: .4rem;
+
+}
+.page4 p:nth-child(2){
+    top: 1.8rem;
+    width: 5.5rem;
+}
+.page4 p span{
+    font-size: .4rem;
+    display: inline-block;
+    color:yellowgreen;
+    margin-left: .1rem;
+}
+
+
+
+/*图片展示*/
+.page5{
+    background: #5975FF;
+}
+
+.page5 .tip{
+    position:absolute;
+    left:0;
+    bottom:.5rem;
+    width:100%;
+    height:1.4rem;
+}
+.page5 .tip span{
+    position: absolute;
+    top:0;
+    //left:1rem;
+    width:3.6rem;
+    height: .82rem;
+}
+
+.page5 img{
+    position: absolute;
+    width:5rem;
+    height:3rem;
+    border:.07rem solid #FFF;
+
+}
+.page5 img:nth-child(1){
+   left:13%;
+    top:8%;
+    -webkit-transform: rotate(9deg);
+    transform: rotate(9deg);
+}
+.page5 img:nth-child(2){
+    left:10%;
+    top:25%;
+    -webkit-transform: rotate(-9deg);
+    transform: rotate(-9deg);
+}
+.page5 img:nth-child(3){
+    left:17%;
+    top:44%;
+    -webkit-transform: rotate(9deg);
+    transform: rotate(9deg);
+}
+
+.page6{
+    background: turquoise;
 }
 
 
