@@ -116,7 +116,6 @@ var phoneRender=(function(){
                 $details.css('transform','translateY(0)');
                 $time.css('display','block');
                 detailsMusicFn();
-
             });
             //给details中touch绑定点击事件.
             $detailsTouch.click(closePhone);
@@ -125,6 +124,7 @@ var phoneRender=(function(){
 })();
 
 /*--MESSAGE--*/
+
 var messageRender = (function(){
     var $message = $('#message'),
         $messageList=$message.children('.messageList'),
@@ -148,7 +148,7 @@ var messageRender = (function(){
                 opacity:1,
                 transform:'translateY(0)'
 
-            })
+            });
             //当发送完成第三条的时候开启键盘操作.
             if(step===1){
                 window.clearInterval(autoTimer);
@@ -203,7 +203,7 @@ var messageRender = (function(){
             messageMusic.play();
         }
     }
-})()
+})();
 
 /*魔方区域*/
 var cubeRender =(function(){
@@ -230,7 +230,6 @@ var cubeRender =(function(){
     }
 
     function  move(ev){
-
         var point = ev.touches[0],
             changeX = point.clientX-$(this).attr('strX'), //strXY在start函数中存了
             changeY = point.clientY - $(this).attr('strY');
@@ -254,7 +253,6 @@ var cubeRender =(function(){
             rotateX:rotateX,
             rotateY:rotateY
         }).css('transform',' scale(0.6) rotateX('+rotateX+'deg) rotateY('+rotateY+'deg)')
-
 
     }
     return {
@@ -282,7 +280,7 @@ var cubeRender =(function(){
 /*SWIPER*/
 
 var swiperRender = (function(){
-    var $swiper = $ ('#swiper')
+    var $swiper = $ ('#swiper');
     return{
         init:function(index){
             $swiper.css('display','block');
@@ -304,10 +302,10 @@ var swiperRender = (function(){
             index = index ||0;
             console.log('ppp',mySwiper);
             mySwiper.slideTo(index,2);
-
         }
     }
 })();
+
 
 var urlObj = window.location.href.queryURLParameter(),
     page = parseFloat(urlObj['page']);

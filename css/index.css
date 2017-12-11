@@ -282,7 +282,6 @@ body {
     transform: translateY(3.7rem);
     -webkit-transition: all .3s;
     transition: all .3s;
-
 }
 
 .message .keyboard .textTip {
@@ -344,7 +343,6 @@ body {
 
     -webkit-transition: all .3s;
     transition: all .3s;
-
 }
 
 .cube .cubebox li {
@@ -356,7 +354,6 @@ body {
     margin: -2.55rem 0 0 -2.55rem;
 
     list-style-type: none;
-
 }
 
 .cube .cubebox li:nth-child(1) {
@@ -392,7 +389,6 @@ body {
     background-size: 100% 100%;
     -webkit-transform: rotateY(-90deg) translateZ(2.55rem) ;
     transform: rotateY(-90deg) translateZ(2.55rem) ;
-
 }
 /*下面*/
 
@@ -402,7 +398,6 @@ body {
     background-size: 100% 100%;
     -webkit-transform: rotateX(-90deg) translateZ(2.55rem) ;
     transform: rotateX(-90deg) translateZ(2.55rem) ;
-
 }
 /*上面*/
 .cube .cubebox li:nth-child(6) {
@@ -411,7 +406,6 @@ body {
     background-size: 100% 100%;
     -webkit-transform: rotateX(90deg) translateZ(2.55rem) ;
     transform: rotateX(90deg) translateZ(2.55rem) ;
-
 }
 
 
@@ -556,8 +550,6 @@ body {
     color:#FFF;
     font-size: .24rem;
     list-style-type: none;
-
-
 }
 
 /*.page3 .box li:nth-child(3n+2){
