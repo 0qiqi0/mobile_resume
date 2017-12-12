@@ -281,11 +281,20 @@ var cubeRender =(function(){
 
 var swiperRender = (function(){
     var $swiper = $ ('#swiper');
+    var $makisu = $ ('#makisu');
+
     return{
         init:function(index){
             $swiper.css('display','block');
 
-            console.log('vvvv',new Swiper('.swiper-container'))
+            $makisu.makisu({
+                selector:'dd',
+                overlap:0.6, //折叠时的速度
+                speed:0.8   //整体速度
+            });
+            $makisu.makisu('open');
+
+            //console.log('vvvv',new Swiper('.swiper-container'))
 
             //初始化swiper实现6个页面之间的切换.   1参:目标区域;2参:配置
             var mySwiper = new Swiper('.swiper-container',{
@@ -301,7 +310,9 @@ var swiperRender = (function(){
             });
             index = index ||0;
             console.log('ppp',mySwiper);
-            mySwiper.slideTo(index,2);
+            mySwiper.slideTo(index,0);
+            //mySwiper.slideTo(index);
+
         }
     }
 })();
