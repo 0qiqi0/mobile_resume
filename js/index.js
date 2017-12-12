@@ -57,7 +57,7 @@ var loadingRender = (function(){
                 })
 
             }
-
+            phoneRender.init();
         }
     }
 })();
@@ -219,7 +219,7 @@ var cubeRender =(function(){
 
     // 滑动的处理
     function start(ev){
-        console.log('eeeee',$cubebox.attr('rotateX'))
+        //console.log('eeeee',$cubebox.attr('rotateX'))
         var point = ev.touches[0];  //记录多个手指操作的信息
         $(this).attr({
             strX:point.clientX,
@@ -237,7 +237,6 @@ var cubeRender =(function(){
             changeX:changeX,
             changeY:changeY
         })
-        //console.log('----',$(this).attr('changeX'));
     }
 
     function end(){
@@ -267,9 +266,12 @@ var cubeRender =(function(){
 
             //每个页面的点击操作
             //$cubebox.singleTap(function(){
-            $cubebox.click(function(){
+
+            $cubeBoxList.click(function(){
                 var index = $(this).index();
                 $cube.css('display','none');
+                console.log('ppp',$(this));
+
                 swiperRender.init(index);
             })
         }
@@ -280,22 +282,33 @@ var cubeRender =(function(){
 /*SWIPER*/
 
 var swiperRender = (function(){
-    var $swiper = $ ('#swiper');
-    var $makisu = $ ('#makisu');
+    var $swiper = $('#swiper');
+    var $makisu = $('#makisu');
+    var $return = $swiper.children('.return');
+
+    function change(){
+        $makisu.makisu({
+            selector:'dd',
+            overlap :0.6, //折叠时的速度
+            speed   :0.8   //整体速度
+        });
+        $makisu.makisu('open');
+    }
 
     return{
         init:function(index){
             $swiper.css('display','block');
+            change();
 
-            $makisu.makisu({
-                selector:'dd',
-                overlap:0.6, //折叠时的速度
-                speed:0.8   //整体速度
-            });
-            $makisu.makisu('open');
-
-            //console.log('vvvv',new Swiper('.swiper-container'))
-
+           /* window.setTimeout(function(){
+                $makisu.makisu({
+                    selector:'dd',
+                    overlap:0.6,
+                    speed:0.8
+                });
+                $makisu.makisu('close');
+            },6000)
+*/
             //初始化swiper实现6个页面之间的切换.   1参:目标区域;2参:配置
             var mySwiper = new Swiper('.swiper-container',{
                 effect : "coverflow",
@@ -306,13 +319,37 @@ var swiperRender = (function(){
                     //example.slides: 记录了当前所有的slide切换的块
                     //example.activeIndex:记录了当前正在展示的这一活动块的索引.constructor
 
+                    var slideAry = example.slides,
+                        activeIndex = example.activeIndex;
+                    if(activeIndex ===0){
+                        change();
+                    } else {
+                        $makisu.makisu({
+                            selector:'dd',
+                            overlap:0.6,
+                            speed:0
+                        });
+                        $makisu.makisu('close');
+                    }
+                    $.each(slideAry,function(index,item){
+                        if(index ===activeIndex){
+                            item.id = 'page'+(activeIndex+1);
+                            return;
+                        }
+                        item.id= null;
+                    })
                 }
+                //onInit: function(example){}
             });
             index = index ||0;
-            console.log('ppp',mySwiper);
             mySwiper.slideTo(index,0);
             //mySwiper.slideTo(index);
 
+            //给返回按钮绑定单击事件
+            $return.click(function(){
+                $swiper.css('display','none');
+                $('.cube').css('display','block');
+            })
         }
     }
 })();
