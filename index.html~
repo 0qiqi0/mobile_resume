@@ -38,6 +38,7 @@
     </div>
 </section>
 
+
 <!--iphone -->
 <section class="phone" id="phone">
     <h2>我的自我介绍</h2>
@@ -246,7 +247,6 @@
     </div>
 </section>
 </body>
-
 
 <script type="text/javascript">
     document.documentElement.style.fontSize = document.documentElement.clientWidth/640*100+'px';
