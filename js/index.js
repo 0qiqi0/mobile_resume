@@ -36,28 +36,31 @@ var loadingRender = (function(){
 
                 window.setTimeout(function(){
                     $loading.css('display','none');
+                    phoneRender.init();
                 },1000)
             } else {
 
                 $.each(ary,function(index,item){
                     var oImg = new Image;
-                    oImg.src = 'img/'+item;
                     oImg.onload = function(){
                         step++;
                         $progressEm.css('width',step/total*100+'%');
                         oImg = null;
                         if(step === total){
                             if(page ===0) return;
+
                             window.setTimeout(function(){
                                 $loading.css('display','none');
                                 phoneRender.init();
                             },1000)
                         }
-                    }
+                    };
+                    //src 属性一定要写到 onload 的后面，否则程序在 IE 中会出错。
+                    oImg.src = 'img/'+item;
+
                 })
 
             }
-            phoneRender.init();
         }
     }
 })();
@@ -73,6 +76,7 @@ var phoneRender=(function(){
         $time= $phone.children('.time');
 
     var listenMusic = $('#listernMusic')[0],
+
         detailsMusic = $('#detailsMusic')[0],
         musicTimer=null;
     //console.log('000',$listenTouch.singleTap)
@@ -85,8 +89,10 @@ var phoneRender=(function(){
                 minute = Math.floor(curTime/60),
                 second = Math.floor(curTime);
             minute < 10?minute ='0'+minute :null;
-            second < 10?minute ='0'+second :null;
-            $time.html = (minute+':'+second);
+            second < 10?second ='0'+second :(''+second);
+
+            $time.innerText = (minute+':'+second);
+            //console.log(1111,minute,second);
             //播放完成检测
             if(curTime === detailsMusic.duration){
                 window.clearInterval(musicTimer);
