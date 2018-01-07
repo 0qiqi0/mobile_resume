@@ -65,6 +65,8 @@ var loadingRender = (function(){
     }
 })();
 
+var listenMusic = $('#listernMusic')[0];
+
 /*--PHONE--*/
 var phoneRender=(function(){
     var $phone =$('#phone'),
@@ -73,9 +75,7 @@ var phoneRender=(function(){
     $listenTouch = $listen.children('.touch'),
         $details = $phone.children('.details'),
         $detailsTouch = $details.children('.touch'),
-        $time= $phone.children('.time');
-
-    var listenMusic = $('#listernMusic')[0],
+        $time= $phone.children('.time'),
 
         detailsMusic = $('#detailsMusic')[0],
         musicTimer=null;
@@ -91,8 +91,7 @@ var phoneRender=(function(){
             minute < 10?minute ='0'+minute :null;
             second < 10?second ='0'+second :(''+second);
 
-            $time.innerText = (minute+':'+second);
-            //console.log(1111,minute,second);
+            $time.innerHTML = "<span>minute+':'+second</span>";
             //播放完成检测
             if(curTime === detailsMusic.duration){
                 window.clearInterval(musicTimer);
@@ -102,7 +101,7 @@ var phoneRender=(function(){
     }
     //关闭当前的phone的区域,显示下一个区域
     function closePhone(){
-        detailsMusic.pause();
+        //detailsMusic.pause();
         $phone.css('transform','translateY('+document.documentElement.clientHeight+'px)').on('webkitTransitionEnd',function(){
             $phone.css('display','none');
         })
@@ -117,20 +116,21 @@ var phoneRender=(function(){
             //$listenTouch.singleTap(function(){
             $listenTouch.click(function(){
                 $listen.css('display','none');
-                listenMusic.pause();
+                //listenMusic.pause();
 
-                $details.css('transform','translateY(0)');
-                $time.css('display','block');
-                detailsMusicFn();
+                //$details.css('transform','translateY(0)');
+                //$time.css('display','block');
+                //detailsMusicFn();
+
+                closePhone();
             });
             //给details中touch绑定点击事件.
-            $detailsTouch.click(closePhone);
+            //$detailsTouch.click(closePhone);
         }
     }
 })();
 
 /*--MESSAGE--*/
-
 var messageRender = (function(){
     var $message = $('#message'),
         $messageList=$message.children('.messageList'),
@@ -143,7 +143,7 @@ var messageRender = (function(){
         step = -1,
         total = $list.length,
         bounceTop =0;
-    var messageMusic = $('#messageMusic')[0];  //play is not a function 解决办法
+    //var messageMusic = $('#messageMusic')[0];  //play is not a function 解决办法
 
     /*--s实现消息列表一条条发送--*/
     function messageMove(){
@@ -174,10 +174,11 @@ var messageRender = (function(){
                     //if(page ===2) return;
 
                     $message.css('display','none');
-                    messageMusic.pause();
+                    //messageMusic.pause();
+                    listenMusic.pause();
                     cubeRender.init();
 
-                },1500);
+                },2000);
             }
         },1000);
 
@@ -206,7 +207,7 @@ var messageRender = (function(){
             $message.css('display','block');
             messageMove();
 
-            messageMusic.play();
+            //messageMusic.play();
         }
     }
 })();
@@ -216,7 +217,6 @@ var cubeRender =(function(){
     var $cube = $('.cube'),
         $cubebox = $cube.children('.cubebox'),
         $cubeBoxList  = $cubebox.children('li');
-    console.log('=====',$cubebox)
 
     //判断滑动和点击里的临界点
     function isSwipe(changeX,changeY){
@@ -276,7 +276,6 @@ var cubeRender =(function(){
             $cubeBoxList.click(function(){
                 var index = $(this).index();
                 $cube.css('display','none');
-                console.log('ppp',$(this));
 
                 swiperRender.init(index);
             })
