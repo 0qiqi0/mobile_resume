@@ -18,7 +18,12 @@
 /*-- LOADING --*/
 var loadingRender = (function(){
 
-    var ary =[];
+    var ary =['book1.png', 'book2.png', 'book3.png', 'book4.png',
+        'book5.png', 'book6.png', 'cube_bg.jpg', 'love3.png', 'love4.png',
+        'love5.png', 'message_keyboard.jpg', 'message_submit.png', 'return.png',
+        'teacher_logo.png', 'tech1.png', 'tech10.png', 'tech2.png', 'tech3.png',
+        'tech4.png', 'tech5.png', 'tech6.png', 'tech7.png', 'work7.png', 'zf_phoneBg.jpg',
+        'zf_phoneBg2.jpg', 'zf_phoneDetail.png', 'zf_phoneListen.png'];
     //获取需要操作的元素
     var $loading = $('#loading'),
         $progressEm = $loading.find('.progressEm');
