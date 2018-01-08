@@ -353,19 +353,23 @@ body {
     left: 50%;
     margin: -2.55rem 0 0 -2.55rem;
     list-style-type: none;
-    border: .2rem solid lightsteelblue;
+    border: .2rem inset lightsteelblue;
     border-radius: .2rem;
 }
 
 .cube .cubebox li span{
     position: absolute;
     text-align: center;
+    width:50%;
+    height: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 90%;
     color: darkslategrey;
     font-weight: bold;
+    border: .2rem solid lightsteelblue;
+    border-radius: .2rem;
 }
 
 
