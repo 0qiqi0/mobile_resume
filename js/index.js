@@ -15,6 +15,8 @@
     pro.queryURLParameter = queryURLParameter;
 }(String.prototype);
 
+
+
 /*-- LOADING --*/
 var loadingRender = (function(){
 
@@ -71,6 +73,10 @@ var loadingRender = (function(){
 })();
 
 var listenMusic = $('#listernMusic')[0];
+
+document.addEventListener("WeixinJSBridgeReady", function () {
+    listenMusic.play();
+}, false);
 
 /*--PHONE--*/
 var phoneRender=(function(){
