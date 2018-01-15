@@ -189,7 +189,7 @@ var messageRender = (function(){
                     listenMusic.pause();
                     cubeRender.init();
 
-                },2000);
+                },3000);
             }
         },1000);
 
